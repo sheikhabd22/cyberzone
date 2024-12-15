@@ -26,19 +26,19 @@ class MatrixBackground {
     }
 
     draw() {
-        // Make the trail effect more visible by reducing transparency
+     
         this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
         for(let i = 0; i < this.drops.length; i++) {
             const symbol = this.symbols[Math.floor(Math.random() * this.symbols.length)];
             
-            // Brighter green color
+       
             this.ctx.fillStyle = '#00FF00';
             this.ctx.font = this.fontSize + 'px monospace';
             this.ctx.fillText(symbol, i * this.fontSize, this.drops[i] * this.fontSize);
             
-            // Increase speed slightly
+          
             if(this.drops[i] * this.fontSize > this.canvas.height && Math.random() > 0.95) {
                 this.drops[i] = 0;
             }
