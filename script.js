@@ -3,7 +3,7 @@ let visitorCount = localStorage.getItem('visitorCount') || 156234;
 document.querySelector('.visitor-count').textContent = `Visitors: ${visitorCount}`;
 localStorage.setItem('visitorCount', parseInt(visitorCount) + 1);
 
-// Online Users Counter (Random fluctuation)
+
 function updateOnlineUsers() {
     const baseCount = 42;
     const randomFluctuation = Math.floor(Math.random() * 10) - 5;
@@ -15,16 +15,16 @@ setInterval(updateOnlineUsers, 5000);
 
 
 
-// Download Button Animation and Functionality
+
 document.querySelectorAll('.download-btn').forEach(button => {
     button.addEventListener('click', function(e) {
         e.preventDefault();
         const downloadUrl = this.getAttribute('data-download-url');
         
-        // Create a temporary link element
+  
         const link = document.createElement('a');
         link.href = downloadUrl;
-        link.download = 'rickroll.jpg'; // Specify the name for the downloaded file
+        link.download = 'rickroll.jpg';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -42,7 +42,7 @@ document.querySelectorAll('.download-btn').forEach(button => {
     });
 });
 
-// Search Functionality
+
 const searchInput = document.querySelector('.search-input');
 const cheatEntries = document.querySelectorAll('.cheat-entry');
 
@@ -64,7 +64,7 @@ searchInput.addEventListener('input', function(e) {
     });
 });
 
-// Matrix Rain Effect
+
 function createMatrixRain() {
     const canvas = document.createElement('canvas');
     canvas.style.position = 'fixed';
@@ -106,7 +106,7 @@ function createMatrixRain() {
     setInterval(draw, 35);
 }
 
-// Dial-up Sound Effect (Optional)
+
 function playDialupSound() {
     const audio = new Audio('dialup.mp3');
     audio.volume = 0.2;
@@ -122,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function() {
     addConstructionGifs();
     createMatrixRain();
     updateOnlineUsers();
-    // playDialupSound(); // Uncomment if you want the dial-up sound
+
 });
 
-// Add "Best Viewed in Netscape" Counter
+r
 const browserNote = document.querySelector('.browser-note');
 let noteVisible = true;
 
@@ -134,7 +134,7 @@ setInterval(() => {
     browserNote.style.visibility = noteVisible ? 'visible' : 'hidden';
 }, 1000);
 
-// Add random glitch effect to titles
+
 const glitchTexts = document.querySelectorAll('.glitch');
 setInterval(() => {
     glitchTexts.forEach(text => {
@@ -147,7 +147,7 @@ setInterval(() => {
     });
 }, 50);
 
-// Smooth scrolling for navigation
+
 document.querySelectorAll('.main-nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -156,8 +156,8 @@ document.querySelectorAll('.main-nav a').forEach(anchor => {
         const targetSection = document.querySelector(targetId);
         
         if (targetSection) {
-            // Add offset for fixed header if needed
-            const offset = 80; // Adjust this value based on your header height
+        
+            const offset = 80; 
             const targetPosition = targetSection.offsetTop - offset;
             
             window.scrollTo({
@@ -191,7 +191,7 @@ window.addEventListener('scroll', function() {
         }
     });
 });
-// Motivational Quotes
+
 const quotes = [
     "Believe in yourself and all that you are.",
     "The only way to do great work is to love what you do.",
@@ -205,7 +205,7 @@ const quotes = [
     "Dream bigger. Do bigger."
 ];
 
-// Function to change the quote
+
 function changeQuote() {
     const quoteElement = document.querySelector('.motivational-quote');
     const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -213,9 +213,9 @@ function changeQuote() {
 }
 
 // Initialize the quote change
-setInterval(changeQuote, 5000); // Change quote every 5 seconds
-document.addEventListener('DOMContentLoaded', changeQuote); // Change quote on page load
-// Make navigation sticky
+setInterval(changeQuote, 5000); 
+document.addEventListener('DOMContentLoaded', changeQuote);
+
 const nav = document.querySelector('.main-nav');
 const navTop = nav.offsetTop;
 
@@ -231,7 +231,7 @@ function stickyNavigation() {
 
 window.addEventListener('scroll', stickyNavigation);
 
-// Clipboard functionality for copying cheats
+
 document.querySelectorAll('.copy-btn').forEach(button => {
     button.addEventListener('click', function() {
         const cheatCode = this.getAttribute('data-clipboard-text');
